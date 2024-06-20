@@ -1,0 +1,267 @@
+/* You can add global styles to this file, and also import other style files */
+#header {
+  background-image: url(/img/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header h1 {
+  font-size: 44px;
+  line-height: 56px;
+}
+
+#header p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: auto;
+}
+
+#header input {
+  border-radius: 40px;
+  background-color: #eaeaea;
+}
+
+@media (min-width: 768px) {
+  #header h1 {
+    font-size: 64px;
+    line-height: 76px;
+  }
+
+  .social {
+    font-size: 12px;
+  }
+}
+
+.btn-sus {
+  background: linear-gradient(
+    0deg,
+    rgba(66, 203, 97, 1) 10%,
+    rgba(0, 126, 21, 1) 50%,
+    rgba(41, 73, 121, 1) 90%
+  );
+  color: #ffffff;
+  border-radius: 40px;
+  margin-left: -50px;
+}
+
+.btn-contact {
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(#007e15, #294979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#cards h2 {
+  font-size: 48px;
+}
+
+@media (min-width: 768px) {
+  #cards h2 {
+    font-size: 48px;
+    line-height: 76px;
+  }
+}
+
+#cards h3 {
+  color: #007e15;
+}
+
+#cards p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+#timeline h3 {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+@media (min-width: 768px) {
+  #timeline h3 {
+    font-size: 48px;
+    line-height: 76px;
+  }
+}
+
+#timeline h4 {
+  font-size: 24px;
+}
+
+#timeline p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+#timeline a {
+  border: 3px solid #007e15;
+  border-radius: 40px;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #000000;
+}
+
+#timeline a:hover {
+  background-color: #007e15;
+  color: #ffffff;
+}
+
+.cell {
+  margin-top: -130px;
+}
+
+.dual-color {
+  background: linear-gradient(110deg, #0a8800 50%, #076d2f 50%);
+  height: 320px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+}
+
+#greenzone h3 {
+  font-size: 26px;
+}
+
+@media (min-width: 768px) {
+  #greenzone h3 {
+    font-size: 48px;
+    line-height: 76px;
+  }
+}
+
+#tools h3 {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+@media (min-width: 768px) {
+  #tools h3 {
+    font-size: 48px;
+    line-height: 76px;
+  }
+}
+
+#tools h5 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#tools p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+#tools li {
+  list-style-image: url(/img/check.png);
+}
+
+#accordion h3 {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+@media (min-width: 768px) {
+  #accordion h3 {
+    font-size: 48px;
+    line-height: 76px;
+  }
+}
+
+#accordion p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+.accordion-item {
+  background-color: #f8f8f8;
+}
+
+.accordion-body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+.accordion-button {
+  font-size: 24px;
+  background-color: #f8f8f8;
+}
+
+.accordion-button:after {
+  background-color: #c7e9ce;
+  border-radius: 100px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f8f8;
+}
+
+.centrado {
+  display: grid;
+  place-items: center;
+}
+
+#logos h3 {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+#logos img {
+  width: 250px;
+}
+
+#contact h3 {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+@media (min-width: 768px) {
+  #contact h3 {
+    font-size: 64px;
+    line-height: 76px;
+  }
+}
+
+#contact p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+#contact a {
+  background: rgb(66, 203, 97);
+  background: linear-gradient(
+    0deg,
+    rgba(66, 203, 97, 1) 10%,
+    rgba(0, 126, 21, 1) 50%,
+    rgba(41, 73, 121, 1) 90%
+  );
+  color: #ffffff;
+  border-radius: 40px;
+  padding: 10px 40px;
+}
+
+#footer {
+  background-color: #eeeeee;
+}
+
+#footer h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#footer p {
+  font-size: 16px;
+  font-weight: 300;
+}

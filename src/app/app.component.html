@@ -1,0 +1,549 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
+
+    --pill-accent: var(--bright-blue);
+
+    /* font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol"; */
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  /* main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  } */
+
+  .angular-logo {
+    max-width: 9.2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  .divider {
+    width: 1px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group .pill:nth-child(6n + 1) {
+    --pill-accent: var(--bright-blue);
+  }
+
+  .pill-group .pill:nth-child(6n + 2) {
+    --pill-accent: var(--french-violet);
+  }
+
+  .pill-group .pill:nth-child(6n + 3),
+  .pill-group .pill:nth-child(6n + 4),
+  .pill-group .pill:nth-child(6n + 5) {
+    --pill-accent: var(--hot-red);
+  }
+
+  .pill-group svg {
+    margin-inline-start: 0.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }
+</style>
+
+<main class="main p-0">
+  <div class="container-fluid" id="header">
+    <div class="container-fluid px-5">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/img/logo.png" class="img-fluid w-50" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto ">
+              <li class="nav-item">
+                <a class="nav-link mx-3 text-white active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-3 text-white" href="#">Lorem Imsup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-3 text-white" href="#">Lorem</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn-contact mx-3 px-5" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container-fluid py-5">
+      <div class="row">
+        <div class="col-12 p-0 m-0 p-md-5 m-md-5 col-md-5">
+          <h1>Lorem ipsum dolor sit <span class="text-gradient">amet</span></h1>
+          <p class="pt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor
+            ac lobortis.
+            Phasellus lobortis vitae elit non dictum. Vestibulum feugiat ex vitae pulvinar ornare.</p>
+          <div class="input-group mb-3 pt-5">
+            <input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet"
+              aria-label="Lorem ipsum dolor sit amet" aria-describedby="button-addon">
+            <a class="btn btn-sus" type="button" id="button-addon" style="margin-left: -30px;">Get started -></a>
+          </div>
+          <div class="row pt-5">
+            <div class="col">
+              <p><img src="img/fb.png" alt=""> &#64;x-capital </p>
+            </div>
+            <div class="col">
+              <p><img src="img/in.png" alt=""> &#64;x-capital </p>
+            </div>
+            <div class="col">
+              <p><img src="img/ins.png" alt=""> &#64;x-capital </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center col-md-6">
+          <img src="/img/cell-phone.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" style="background-color: #F0F0F0;" id="cards">
+    <div class="container text-center py-5">
+      <div class="row py-5 gx-5">
+        <div class="col-12">
+          <h2>Lorem ipsum dolor sit <span class="text-gradient">amet</span></h2>
+          <p class="pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil soluta, accusantium tempora
+            quam voluptate
+            ero
+            architecto esse obcaecati voluptatibus dignissimos quaerat, inventore sapiente quod explicabo impedit velit
+            enim neque laudantium!</p>
+        </div>
+        <div class="col-12 pt-5">
+          <div class="row gx-5">
+            <div class="col p-3 mx-3 bg-secondary bg-opacity-25">
+              <img src="img/iphone.png" alt="">
+              <h3>Lorem ipsum </h3>
+              <p class="pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet
+                dolor ac
+                lobortis.
+              </p>
+            </div>
+            <div class="col p-3 mx-3  bg-secondary bg-opacity-25">
+              <img src="img/shopping.png" alt="">
+              <h3>Lorem ipsum </h3>
+              <p class="pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet
+                dolor ac
+                lobortis.
+              </p>
+            </div>
+            <div class="col p-3 mx-3 bg-secondary bg-opacity-25">
+              <img src="img/shopping.png" alt="">
+              <h3>Lorem ipsum </h3>
+              <p class="pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet
+                dolor ac
+                lobortis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="timeline">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col">
+          <img src="img/cell.png" class="img-fluid cell" alt="">
+        </div>
+        <div class="col-12 col-md-5 pt-5 px-5">
+          <h3 class="h1">Lorem ipsum dolor sit <span class="text-gradient">amet?</span></h3>
+          <div class="row pt-5">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-3">
+                  <img src="img/icon-1.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-8">
+                  <h4>Lorem ipsum </h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                    lobortis. </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pt-3">
+              <div class="row">
+                <div class="col-3">
+                  <img src="img/icon-2.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-8">
+                  <h4>Lorem ipsum </h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                    lobortis. </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pt-3">
+              <div class="row">
+                <div class="col-3">
+                  <img src="img/icon-3.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-8">
+                  <h4>Lorem ipsum </h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                    lobortis. </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 pt-5">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <a href="">Contact</a>
+                </div>
+                <div class="col-12 col-md-6 pt-5 pt-md-0 ">
+                  <a href="">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5" id="greenzone">
+    <div class="container dual-color text-center py-5">
+      <h3 class="text-white">Lorem ipsum dolor sit amet <br> consectetur adipisicing elit.</h3>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="tools">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12">
+          <img src="/img/tools.png" class="img-fluid" width="75" alt="">
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h3 class="h1">Lorem ipsum dolor sit <span class="text-gradient">consectetur adipiscing elit</span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                lobortis. Phasellus lobortis vitae elit non dictum. Vestibulum feugiat ex vitae pulvinar ornare. Morbi
+                in dui semper, ultrices orci ut, malesuada tellus. </p>
+              <ul class="pt-5">
+                <li>
+                  <h5 class="fw-bold">Lorem ipsum dolor sit amet.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                    lobortis. </p>
+                </li>
+                <li>
+                  <h5 class="fw-bold">Lorem ipsum dolor sit amet.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                    lobortis. </p>
+                </li>
+                <li>
+                  <h5 class="fw-bold">Lorem ipsum dolor sit amet.</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac
+                    lobortis. </p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6" style="display: grid; place-items: center;">
+              <img src="/img/graphics.png" class="img-fluid p-5" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="accordion">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md-5">
+          <img src="/img/girl.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-12 col-md-7 px-5">
+          <h3 class="h1">Lorem ipsum dolor sit <span class="text-gradient">consectetur adipiscing elit</span></h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin sit amet dolor ac lobortis.
+          </p>
+          <div class="accordion pt-5" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Lorem ipsum dolor
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi amet eos nam culpa nihil nostrum
+                  cumque animi! Commodi assumenda nisi rem quam omnis numquam quidem beatae minus tempore, minima
+                  nesciunt.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Lorem ipsum dolor
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat architecto nihil id? Dolorum
+                  delectus, ex quibusdam porro odio cumque, modi consequuntur non voluptate id nesciunt perspiciatis
+                  doloribus corporis rem voluptates?
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Lorem ipsum dolor
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nulla in eaque facilis tempore ut
+                  necessitatibus rem, consequatur ipsam, error, non explicabo ullam molestias illum ratione minima
+                  voluptates accusamus. Mollitia?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="logos">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 pb-5 pb-md-0 col-md-4">
+          <h3>Lorem ipsum dolor sit <span class="text-gradient">amet</span> consectetur.</h3>
+        </div>
+        <div class="col centrado">
+          <img src="img/logo.png" class="img-fluid opacity-50" alt="">
+        </div>
+        <div class="col centrado">
+          <img src="img/logo.png" class="img-fluid opacity-50" alt="">
+        </div>
+        <div class="col centrado">
+          <img src="img/logo.png" class="img-fluid opacity-50" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="contact">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 pb-5 text-center">
+          <h3>Get in touch with us</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <form class="row g-3">
+            <div class="col-6">
+              <label for="inputEmail4" class="form-label">Lorem</label>
+              <input type="email" class="form-control border-0 border-bottom rounded-0" id="inputEmail4">
+            </div>
+            <div class="col-6">
+              <label for="inputPassword4" class="form-label">Lorem</label>
+              <input type="password" class="form-control border-0 border-bottom rounded-0" id="inputPassword4">
+            </div>
+            <div class="col-6">
+              <label for="inputAddress" class="form-label">Lorem</label>
+              <input type="text" class="form-control border-0 border-bottom rounded-0" id="inputAddress">
+            </div>
+            <div class="col-6">
+              <label for="inputAddress2" class="form-label">Lorem</label>
+              <input type="text" class="form-control border-0 border-bottom rounded-0" id="inputAddress2">
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Lorem</label>
+                <textarea class="form-control border-0 border-bottom rounded-0" id="exampleFormControlTextarea1"
+                  rows="3"></textarea>
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <a type="submit" class="">Send message</a>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 pt-5 pt-md-0 col-md-6">
+          <img src="img/map.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="footer">
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-6">
+          <img src="img/logo.png" class="img-fluid w-50" alt="">
+          <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ipsum doloremque ratione.
+          </p>
+          <p class="pt-5">Terms and Conditions | Privacy Policy</p>
+          <div class="row pt-5">
+            <div class="col">
+              <p><img src="img/fb.png" alt=""> &#64;x-capital </p>
+            </div>
+            <div class="col">
+              <p><img src="img/in.png" alt=""> &#64;x-capital </p>
+            </div>
+            <div class="col">
+              <p><img src="img/ins.png" alt=""> &#64;x-capital </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <h3 class="fw-bold">Quick link</h3> <br>
+          <p>Home</p> <br>
+          <p>Lorem ipsum</p> <br>
+          <p>Lorem ipsum</p>
+        </div>
+
+        <div class="col">
+          <h3><img src="img/tel.png" alt=""> 99 9999 9999</h3>
+          <br>
+          <h3><img src="img/mail.png" alt=""> contact&#64;xcapital.com</h3>
+        </div>
+
+        <div class="col-12 pt-5 text-center">
+          <h3>Copyright &#64; 2023 X Capital. All rights reserved.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<router-outlet />
